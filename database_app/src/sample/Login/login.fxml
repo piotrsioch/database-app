@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login.LoginController">
+    <left>
+        <AnchorPane prefHeight="600.0" prefWidth="297.0" style="-fx-background-color: #3b4d80;" BorderPane.alignment="CENTER" />
+    </left>
+    <center>
+        <AnchorPane minWidth="250.0" prefHeight="400.0" prefWidth="320.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="usernameTextField" layoutX="58.0" layoutY="194.0" prefHeight="35.0" prefWidth="340.0" promptText="Username">
+                    <font>
+                        <Font size="18.0" />
+                    </font></TextField>
+                <PasswordField fx:id="enterPasswordField" layoutX="58.0" layoutY="244.0" prefHeight="35.0" prefWidth="340.0" promptText="Password">
+                    <font>
+                        <Font size="18.0" />
+                    </font></PasswordField>
+                <Button fx:id="loginButton" layoutX="68.0" layoutY="316.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="44.0" prefWidth="160.0" style="-fx-background-color: #3b4d80; -fx-background-radius: 5;" text="Login" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                    </font></Button>
+                <Button fx:id="quitButton" layoutX="464.0" layoutY="8.0" mnemonicParsing="false" onAction="#quitButtonOnAction" prefHeight="27.0" prefWidth="29.0" style="-fx-background-color: #c9002c; -fx-background-radius: 25;" text="X" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="12.0" />
+                    </font></Button>
+                <Label fx:id="loginMessageLabel" layoutX="187.0" layoutY="124.0" prefHeight="41.0" prefWidth="292.0" textFill="#f50606">
+                    <font>
+                        <Font size="18.0" />
+                    </font></Label>
+                <Button fx:id="signInButton" layoutX="289.0" layoutY="375.0" mnemonicParsing="false" onAction="#singinButtonOnAction" prefHeight="44.0" prefWidth="104.0" style="-fx-background-color: transparent;" text=" Sign up!" textFill="#3b4d80">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="16.0" />
+                    </font></Button>
+                <Label layoutX="58.0" layoutY="121.0" text="Sign In">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Label>
+                <Label layoutX="58.0" layoutY="383.0" text="You do not have an account?">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

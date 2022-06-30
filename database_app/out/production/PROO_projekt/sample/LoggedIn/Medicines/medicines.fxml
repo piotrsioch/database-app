@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoggedIn.Medicines.MedicineController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="166.0" style="-fx-background-color: #3b4d80;">
+         <children>
+            <Pane prefHeight="140.0" prefWidth="200.0" />
+            <Button fx:id="homePageButton" mnemonicParsing="false" onAction="#homePageButtonOnAction" prefHeight="53.0" prefWidth="166.0" text="Home page" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="medicinesButton" layoutX="10.0" layoutY="94.0" mnemonicParsing="false" onAction="#medicinesButtonOnAction" prefHeight="42.0" prefWidth="199.0" text="Medicines" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="calendarButton" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#calendarButtonOnAction" prefHeight="42.0" prefWidth="199.0" text="Calendar" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button fx:id="diaryButton" layoutX="10.0" layoutY="136.0" mnemonicParsing="false" onAction="#diaryButtonOnAction" prefHeight="42.0" prefWidth="199.0" text="Diary" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="149.0" prefWidth="200.0" />
+            <Button fx:id="logoutButton" layoutX="10.0" layoutY="318.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="42.0" prefWidth="199.0" text="Logout" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <TableView fx:id="medicineTableView" layoutX="185.0" layoutY="149.0" prefHeight="335.0" prefWidth="546.0">
+         <columns>
+            <TableColumn fx:id="name" prefWidth="86.0" text="Name" />
+            <TableColumn fx:id="dose" prefWidth="89.0" text="Dose" />
+            <TableColumn fx:id="useDuration" prefWidth="147.0" text="Use Duration" />
+            <TableColumn fx:id="purpose" minWidth="0.0" prefWidth="109.0" text="Purpose" />
+            <TableColumn fx:id="status" prefWidth="111.0" text="Is Taken Today" />
+         </columns>
+      </TableView>
+      <Button fx:id="addButton" layoutX="227.0" layoutY="55.0" mnemonicParsing="false" onAction="#addButtonOnAction" text="Add" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="deleteButton" layoutX="314.0" layoutY="55.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" text="Delete" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="refreshButton" layoutX="412.0" layoutY="55.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" text="Refresh" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="takeButton" layoutX="522.0" layoutY="55.0" mnemonicParsing="false" onAction="#takeMedicine" text="Take" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
+</AnchorPane>
