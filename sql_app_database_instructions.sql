@@ -53,7 +53,6 @@ CREATE TABLE `user_events` (
   `event_minutes` int NOT NULL,
   `username` varchar(45) NOT NULL,
   PRIMARY KEY (`event_id`),
-  UNIQUE KEY `username` (`username`),
   CONSTRAINT `user_events_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_account` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -73,7 +72,6 @@ CREATE TABLE `user_medicines` (
   `purpose` varchar(100) NOT NULL,
   `username` varchar(45) NOT NULL,
   PRIMARY KEY (`medicine_id`),
-  UNIQUE KEY `username` (`username`),
   CONSTRAINT `user_medicines_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_account` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -92,7 +90,6 @@ CREATE TABLE `user_notes` (
   `details` text NOT NULL,
   `username` varchar(45) NOT NULL,
   PRIMARY KEY (`note_id`),
-  UNIQUE KEY `username` (`username`),
   CONSTRAINT `user_notes_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user_account` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;

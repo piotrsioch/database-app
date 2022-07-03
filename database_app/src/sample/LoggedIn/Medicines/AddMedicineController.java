@@ -1,5 +1,6 @@
 package sample.LoggedIn.Medicines;
 
+import com.mysql.cj.util.StringUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -54,6 +55,9 @@ public class AddMedicineController implements Initializable {
         boolean isAnyFieldEmpty = isAnyFieldEmpty();
         if(isAnyFieldEmpty) {
             errorLabel.setText("Any field cannot be empty!"); }
+        else if(!isEnteredValueANumber()) {
+            errorLabel.setText("Entered dose value is not a number!");
+        }
         else {
             addMedicine();
             createAlertAndCloseScene();
@@ -119,6 +123,16 @@ public class AddMedicineController implements Initializable {
         Parent root = (Parent) FXMLLoader.load(AddMedicineController.class.getClassLoader().getResource("sample/LoggedIn/Medicines/medicines.fxml"));
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.getScene().setRoot(root);
+    }
+
+    private boolean isEnteredValueANumber() {
+        String string = doseTextField.getText();
+        try {
+            float f = Float.parseFloat(string);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
     }
 
     private boolean isAnyFieldEmpty() {

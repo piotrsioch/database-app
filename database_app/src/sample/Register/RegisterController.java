@@ -15,6 +15,7 @@ import sample.DatabaseConnection.DatabaseConnection;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +67,7 @@ public class RegisterController implements Initializable {
         boolean isAnyFieldEmpty = isAnyFieldEmpty(textFields);
         boolean isAnyFieldTrimmed = isAnyFieldTrimmed(textFields);
         boolean isAnyFieldLessThan5Characters = isAnyFieldLessThan5Characters(textFields);
+        boolean usernameExistsInDatabase = checkIfUsernameExistsInDatabase();
 
         if (isAnyFieldEmpty) {
             alertLabel.setText("Any field cannot be empty!");
@@ -73,6 +75,8 @@ public class RegisterController implements Initializable {
             alertLabel.setText("Any field cannot contain whitespaces!");
         } else if (isAnyFieldLessThan5Characters) {
             alertLabel.setText("Password and username length cannot be less than 5!");
+        } else if(usernameExistsInDatabase) {
+            alertLabel.setText("Username is already taken!");
         }
         else if (passwordField.getText().equals(confirmPasswordField.getText())) {
             registerUser();
@@ -113,6 +117,32 @@ public class RegisterController implements Initializable {
             e.getCause();
         }
 
+    }
+
+    private boolean checkIfUsernameExistsInDatabase() {
+        DatabaseConnection connectNow = new DatabaseConnection();
+        Connection connectDb = connectNow.getConnection();
+        boolean usernameExists = false;
+
+        String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + usernameTextField.getText() + "'";
+        try {
+            Statement statement = connectDb.createStatement();
+            ResultSet queryResult = statement.executeQuery(verifyLogin);
+
+            while(queryResult.next()) {
+                if (queryResult.getInt(1) == 1) {
+                    usernameExists = true;
+
+                } else {
+                    usernameExists = false;
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            e.getCause();
+        }
+        return usernameExists;
     }
 
     private boolean isAnyFieldEmpty(List<TextField> textFields) {
@@ -169,14 +199,7 @@ public class RegisterController implements Initializable {
 
     }
 
-    private boolean checkIfUsernameExistsInDatabase() {
-        boolean usernameExistsInDatabase = false;
 
-        DatabaseConnection connectNow = new DatabaseConnection();
-        Connection connectDB = connectNow.getConnection();
-
-        return usernameExistsInDatabase;
-    }
 
     private void addTextFieldsToList() {
         textFields.add(passwordField);

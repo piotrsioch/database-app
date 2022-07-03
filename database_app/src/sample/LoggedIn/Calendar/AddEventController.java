@@ -138,7 +138,7 @@ public class AddEventController implements Initializable {
                 isAnyFieldEmpty = true;
             }
 
-            if(importanceComboBox.getItems().isEmpty() || minutesComboBox.getItems().isEmpty() || hoursComboBox.getItems().isEmpty()
+            if(importanceComboBox.getItems().isEmpty() || minutesComboBox.getValue() == null || hoursComboBox.getValue() == null
                     || hoursComboBox.getItems().isEmpty() || (datePicker.getValue() == null)) {
                 isAnyFieldEmpty = true;
             }

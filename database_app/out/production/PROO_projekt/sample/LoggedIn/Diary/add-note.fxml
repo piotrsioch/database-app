@@ -6,18 +6,25 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoggedIn.Diary.AddNoteController">
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/1.8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoggedIn.Diary.AddNoteController">
    <children>
-      <Button fx:id="cancelButton" layoutX="663.0" layoutY="523.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" text="Cancel" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font></Button>
-      <Button fx:id="addButton" layoutX="557.0" layoutY="523.0" mnemonicParsing="false" onAction="#addButtonOnAction" text="Add" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font></Button>
+      <HBox layoutX="551.0" layoutY="522.0" spacing="50.0">
+         <children>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonOnAction" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonOnAction" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
       <TextField fx:id="titleTextField" alignment="TOP_CENTER" layoutX="28.0" layoutY="21.0" prefHeight="25.0" prefWidth="252.0" promptText="Title" />
       <TextField fx:id="shortDescriptionTextField" alignment="TOP_CENTER" layoutX="326.0" layoutY="21.0" prefHeight="25.0" prefWidth="409.0" promptText="Short Description" />
       <TextArea fx:id="detailsTextArea" layoutX="24.0" layoutY="71.0" prefHeight="435.0" prefWidth="711.0" promptText="Enter your note here">

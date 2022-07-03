@@ -5,11 +5,12 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoggedIn.Medicines.MedicineController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/1.8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoggedIn.Medicines.MedicineController">
    <children>
       <VBox prefHeight="600.0" prefWidth="166.0" style="-fx-background-color: #3b4d80;">
          <children>
@@ -42,32 +43,39 @@
             </Button>
          </children>
       </VBox>
-      <TableView fx:id="medicineTableView" layoutX="185.0" layoutY="149.0" prefHeight="335.0" prefWidth="546.0">
+      <TableView fx:id="medicineTableView" layoutX="185.0" layoutY="142.0" prefHeight="356.0" prefWidth="602.0">
          <columns>
             <TableColumn fx:id="name" prefWidth="86.0" text="Name" />
             <TableColumn fx:id="dose" prefWidth="89.0" text="Dose" />
             <TableColumn fx:id="useDuration" prefWidth="147.0" text="Use Duration" />
-            <TableColumn fx:id="purpose" minWidth="0.0" prefWidth="109.0" text="Purpose" />
-            <TableColumn fx:id="status" prefWidth="111.0" text="Is Taken Today" />
+            <TableColumn fx:id="purpose" minWidth="0.0" prefWidth="149.0" text="Purpose" />
+            <TableColumn fx:id="status" prefWidth="129.0" text="Is Taken Today" />
          </columns>
       </TableView>
-      <Button fx:id="addButton" layoutX="227.0" layoutY="55.0" mnemonicParsing="false" onAction="#addButtonOnAction" text="Add" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button fx:id="deleteButton" layoutX="314.0" layoutY="55.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" text="Delete" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button fx:id="refreshButton" layoutX="412.0" layoutY="55.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" text="Refresh" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font></Button>
-      <Button fx:id="takeButton" layoutX="522.0" layoutY="55.0" mnemonicParsing="false" onAction="#takeMedicine" text="Take" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
+      <HBox layoutX="185.0" layoutY="94.0" spacing="50.0">
+         <children>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="38.0" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonOnAction" prefHeight="38.0" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="38.0" text="Refresh" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="takeButton" mnemonicParsing="false" onAction="#takeMedicine" prefHeight="38.0" prefWidth="64.0" text="Take" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
    </children>
    <stylesheets>
       <URL value="@style.css" />

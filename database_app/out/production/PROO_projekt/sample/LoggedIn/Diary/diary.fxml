@@ -5,11 +5,12 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoggedIn.Diary.DiaryController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/1.8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoggedIn.Diary.DiaryController">
    <children>
       <VBox prefHeight="600.0" prefWidth="166.0" style="-fx-background-color: #3b4d80;">
          <children>
@@ -44,18 +45,25 @@
       </VBox>
       <ListView fx:id="noteListView" layoutX="179.0" layoutY="12.0" onMouseClicked="#listViewOnAction" prefHeight="575.0" prefWidth="92.0" />
       <TextArea fx:id="detailsTextArea" layoutX="294.0" layoutY="12.0" prefHeight="441.0" prefWidth="492.0" />
-      <Button fx:id="addButton" layoutX="310.0" layoutY="482.0" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="38.0" prefWidth="80.0" text="add" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font></Button>
-      <Button fx:id="deleteButton" layoutX="413.0" layoutY="482.0" mnemonicParsing="false" onAction="#deleteButtonOnAction" prefHeight="38.0" prefWidth="80.0" text="delete" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font></Button>
-      <Button fx:id="refreshButton" layoutX="515.0" layoutY="482.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="38.0" prefWidth="80.0" text="refresh" textFill="WHITE">
-         <font>
-            <Font size="17.0" />
-         </font></Button>
+      <HBox layoutX="294.0" layoutY="484.0" spacing="45.0">
+         <children>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonOnAction" prefHeight="38.0" prefWidth="80.0" text="Add" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonOnAction" prefHeight="38.0" prefWidth="80.0" text="Delete" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="38.0" prefWidth="88.0" text="Refresh" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
    </children>
    <stylesheets>
       <URL value="@style.css" />

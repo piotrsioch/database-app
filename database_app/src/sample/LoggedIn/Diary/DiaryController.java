@@ -107,6 +107,8 @@ public class DiaryController extends LoggedInController implements AppController
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
+
+        detailsTextArea.setText("");
     }
 
 
